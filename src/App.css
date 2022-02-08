@@ -1,38 +1,188 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a {
+  text-decoration: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Header {
+  /* text-align: left; */
+  /* padding-left: 20px; */
+  /* display: flex; */
+  min-width: 100vw;
+  display: grid;
+  justify-content: normal;
+  grid-template-columns: 40vw auto;
+  align-items: baseline; /* flex-direction: row; */
+  text-align: left;
+  padding-left: 10px;
+  padding-right: 0;
+  margin-right: 0;
+  align-items: center;
+  background-color: #f9a620;
+  font-family: "Space Mono", monospace;
+  border-bottom: 1px solid black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.CommentDiv {
+  font-family: "Space Mono", monospace;
+}
+
+.LinkNews {
+  /* border: 1px solid rgb(247, 245, 214); */
+  background-color: #fdffff;
+  padding: 5px;
+  padding-left: 10px;
+  margin: 10px;
+  text-align: left;
+  width: 75vw;
+  border-radius: 20px;
+}
+.LinkNewsSingle {
+  /* border: 1px solid black; */
+  padding: 5px;
+  padding-left: 10px;
+  margin: 10px;
+  text-align: left;
+  width: 85vw;
+  border-radius: 20px;
+}
+.author {
+  margin-left: 20px;
+  margin-top: 0;
+  font-family: "Space Mono", monospace;
+}
+
+.authorList {
+  margin-top: 0;
+  font-family: "Space Mono", monospace;
+}
+
+.SingleArticleHeader {
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  display: grid;
+  grid-template-columns: 75vw 25vw;
+  justify-items: center;
+  align-items: center;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-right: 25vw;
+  padding-inline-start: 10px;
+}
+
+.Nav {
+  padding-left: 0px;
+  display: grid;
+  grid-template-columns: 25% 25% 25%;
+  grid-template-rows: 10px 5px 5px ;
+  grid-template-areas:
+    "a b c"
+    "a b c"
+    ;
+    justify-content: space-between;
+    align-items: baseline;
+  padding: 10;
+}
+
+.NewsDiv {
+  /* border: 1px solid black; */
+  border-color: #000;
+  display: grid;
+  grid-template-columns: 35px 35px;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+
+  /* flex-direction: column; */
+  height: 100px;
+  width: 70px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.BigLink {
+  color: #000;
   display: flex;
+  margin-left: 10px;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.NCNews {
+  margin-left: 0;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  padding-right: 0;
+  margin-right: 0px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Upvote {
+  height: 30px;
+  width: 30px;
+  margin: 10px;
+  border-style: none;
+  background-color: white;
+  padding: 0px;
+}
+
+.UpVoteButton {
+  height: 30px;
+  width: 30px;
+  /* position: relative; */
+  padding-left: 0px;
+}
+.divider {
+  width: 120vw;
+  border: 1px solid black;
+  display: flex;
+}
+
+.articleTitles {
+  margin-bottom: 2px;
+}
+
+.HomeButton {
+  text-align: center;
+  align-items: baseline;
+  color: #000;
+  height: 20px;
+  width: 20px;
+  grid-area: a;
+  margin-right: 20px;
+  align-self: baseline;
+}
+
+.CategoryIcon {
+  grid-area: b;
+}
+
+.backArrow {
+  /* border: 1px solid black; */
+  padding-left: 20px;
+  padding-top: 20px;
+  width: 30px;
+  margin: 0px;
+}
+
+.backArrowIcon {
+  height: 30px;
+  width: 30px;
+  color: #000;
+}
+
+.UserIcon {
+  height: 20px;
+  width: 20px;
+  grid-area: c;
 }
