@@ -3,6 +3,7 @@ import { getArticles } from "../utils/api";
 import { Link } from "react-router-dom";
 import { BiCommentAdd } from "react-icons/bi";
 import { BiUpArrowCircle } from "react-icons/bi";
+import moment from "moment";
 
 const NewsBody = () => {
   const [articles, setArticles] = useState([]);
@@ -18,13 +19,12 @@ const NewsBody = () => {
           <>
             <Link to={`/articles/${article.article_id}`} className="BigLink">
               <li key={article.article_id} className="LinkNews">
-                <h2 key={article.title} className="articleTitles">
-                  {article.title}
-                </h2>
-                <p key={article.author} className="authorList">
-                  {article.author}
+                <h2 className="articleTitles">{article.title}</h2>
+                <p className="authorList">{article.author}</p>{" "}
+                <p className="DatePosted">
+                  {moment(article.created_at).format("LL")}
                 </p>
-                <p key={article.key}>{article.body.substring(0, 200)}</p>
+                <p>{article.body.substring(0, 200)}</p>
               </li>{" "}
               <div className="divider"></div>
             </Link>
@@ -32,10 +32,15 @@ const NewsBody = () => {
               <button className="Upvote">
                 <BiUpArrowCircle className="UpVoteButton" />
               </button>
+
               <div className="CommentDiv">{article.votes}</div>
               <button className="Upvote">
-                <BiCommentAdd className="UpVoteButton" />
+                <Link to={`/articles/${article.article_id}`}>
+                  {" "}
+                  <BiCommentAdd className="UpVoteButton" />
+                </Link>
               </button>
+
               <div className="CommentDiv">{article.comment_count}</div>
             </div>
           </>

@@ -5,6 +5,7 @@ import { React } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Components/NewsBody";
 import SingleArticle from "./Components/SingleArticle";
+import Topics from "./Components/Topics";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/articles" element={<Home />} />
           <Route path="/articles/:article_id" element={<SingleArticle />} />
+          <Route path="/topics" element={<Topics />} />
         </Routes>
       </div>
     </BrowserRouter>

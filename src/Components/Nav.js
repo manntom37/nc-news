@@ -9,9 +9,9 @@ const Nav = () => {
       <Link to="/articles">
         <FaHome className="HomeButton" />
       </Link>
-      <br></br>
-      <BiCategory className="CategoryIcon"  />
-      <br></br>
+      <Link to={`/topics`}>
+        <BiCategory className="CategoryIcon" />{" "}
+      </Link>
       <FaUserCircle className="UserIcon" />
     </nav>
   );

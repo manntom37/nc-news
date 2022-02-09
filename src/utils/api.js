@@ -15,3 +15,15 @@ export const getSingleArticle = (article_id) => {
     return res.data.article;
   });
 };
+
+export const getComments = (article_id) => {
+  return NewsAPI.get(`articles/${article_id}`).then((res) => {
+    return res.data.article;
+  });
+};
+
+export const getTopics = () => {
+  return NewsAPI.get("/topics").then((res) => {
+    return res.data.topics;
+  });
+};
