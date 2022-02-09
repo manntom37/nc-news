@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { BsArrowLeftSquareFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import moment from "moment";
+import { AiFillTag } from "react-icons/ai";
 
 const SingleArticle = () => {
   const { article_id } = useParams();
@@ -31,6 +32,10 @@ const SingleArticle = () => {
 
           <p className="author">{article.author}</p>
           <p>{article.body}</p>
+          <p className="SingleArticleTag">
+            <AiFillTag />
+            {article.topic}
+          </p>
         </li>
       </div>
     </>

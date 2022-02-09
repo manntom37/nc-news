@@ -17,12 +17,14 @@ const Topics = () => {
         {topic.map((top) => {
           return (
             <li key={top.slug}>
-              <h2>{top.slug.charAt(0).toUpperCase() + top.slug.slice(1)}</h2>
+              <Link to={`/topics/${top.slug}`}>
+                <h2>{top.slug.charAt(0).toUpperCase() + top.slug.slice(1)}</h2>
+              </Link>
               <p className="CategorySlug">{top.description}</p>
               <div className="CategoryDivider"></div>
             </li>
           );
-        })}
+        })}{" "}
       </ul>{" "}
     </>
   );

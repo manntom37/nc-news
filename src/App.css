@@ -209,6 +209,12 @@ ul {
   grid-area: c;
 }
 
+.SingleArticleTag {
+  text-align: right;
+  color: #888888;
+  font-size: medium;
+}
+
 .DatePosted {
   /* border: 1px solid black; */
   margin: 0;
@@ -239,4 +245,20 @@ ul {
 .CategorySlug {
   padding-left: 50px;
   padding-right: 50px;
+}
+
+.LinkNewsTopics {
+  display: flex;
+  flex-direction: row;
+}
+
+.ulTopicArticles {
+  display: grid;
+}
+
+.TopicSlug {
+  font-size: larger;
+  text-align: left;
+  padding: 0;
+  width: 270px;
 }

@@ -17,8 +17,12 @@ const NewsBody = () => {
       {articles.map((article) => {
         return (
           <>
-            <Link to={`/articles/${article.article_id}`} className="BigLink">
-              <li key={article.article_id} className="LinkNews">
+            <Link
+              to={`/articles/${article.article_id}`}
+              className="BigLink"
+              key={article.article_id}
+            >
+              <li className="LinkNews">
                 <h2 className="articleTitles">{article.title}</h2>
                 <p className="authorList">{article.author}</p>{" "}
                 <p className="DatePosted">
