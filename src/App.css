@@ -54,8 +54,7 @@ h2 {
   padding-top: 0;
 }
 .author {
-  margin-left: 20px;
-  margin-top: 0;
+  margin: auto;
   font-family: "Space Mono", monospace;
   text-align: center;
 }
@@ -160,6 +159,8 @@ ul {
   min-width: 110%;
 }
 
+
+
 .CategoryDivider {
   width: 120vw;
   border: 1px solid #e6e6e6;
@@ -168,7 +169,8 @@ ul {
 }
 
 .articleTitles {
-  margin-bottom: 2px;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 .HomeButton {
@@ -258,7 +260,83 @@ ul {
 
 .TopicSlug {
   font-size: larger;
-  text-align: left;
+  display: flex;
+  text-align: center;
   padding: 0;
-  width: 270px;
+  margin-top: 10;
+  margin-bottom: 0;
+}
+.backArrowCat {
+  /* border: 1px solid black; */
+  display: flex;
+  width: 75vw;
+  margin: 0px;
+  text-align: left;
+}
+
+.backArrowIconCat {
+  height: 30px;
+  width: 30px;
+  color: #39393a;
+  padding-left: 10px;
+}
+.BackArrowCategories {
+  text-align: right;
+  padding: 0;
+  margin: 0;
+  width: 60vw;
+}
+
+.CategoryDividerComments {
+  width: 50vw;
+  justify-self: center;
+  border: 2px solid #e6e6e6;
+  /* display: flex; */
+  /* min-width: 110%; */
+  /* margin-left: 50vw; */
+  margin: auto;
+}
+
+.SortBy {
+  /* border: 1px solid black; */
+  width: 100vw;
+  height: 50px;
+  margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.SortByOnTopics {
+  width: 80vw;
+  height: 50px;
+  margin-top: 0px;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  flex-wrap: wrap;
+  
+}
+
+.SortByText {
+  text-align: left;
+  padding-left: 20px;
+}
+
+.NewButton {
+  height: 40px;
+  width: 50px;
+  font-size: 25px;
+  font-family: "Space Mono", monospace;
+  border-radius: 10px;
+  margin-left: 5px;
+  text-align: center;
+}
+
+.SortByTextOnTopics {
+  text-align: left;
+  padding-left: 10px;
 }

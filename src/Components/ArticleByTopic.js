@@ -3,13 +3,14 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { getArticles } from "../utils/api";
 import { BiCommentAdd } from "react-icons/bi";
-import { BiUpArrowCircle } from "react-icons/bi";
+import { BiUpArrowCircle, BiTime } from "react-icons/bi";
 import moment from "moment";
 import { getTopics } from "../utils/api";
+import { AiFillTag } from "react-icons/ai";
+import { BsArrowLeftSquareFill } from "react-icons/bs";
 
 const ArticleByTopic = () => {
   const { topic_id } = useParams();
-  console.log(topic_id);
   const [topicParam, setTopicParam] = useState([]);
 
   useEffect(() => {
@@ -18,16 +19,61 @@ const ArticleByTopic = () => {
     });
   }, [topic_id]);
 
+  const handleClick = (sort_by) => {
+    console.log(sort_by);
+    getArticles(topic_id, sort_by).then((res) => {
+      return setTopicParam(res);
+    });
+  };
+
   return (
     <ul className="NewsBody">
       <h2 className="TopicSlug">
-        {topic_id.charAt(0).toUpperCase() + topic_id.slice(1)} Articles
-      </h2>
+        <div className="backArrowCat">
+          <Link to={`/topics/`}>
+            <BsArrowLeftSquareFill className="backArrowIconCat" />
+          </Link>
+
+          <p className="BackArrowCategories">
+            {topic_id.charAt(0).toUpperCase() + topic_id.slice(1)} Articles
+          </p>
+        </div>{" "}
+      </h2>{" "}
+      <br></br>
+      <div className="SortByOnTopics">
+        <p className="SortByTextOnTopics">Sort By:</p>
+        <button
+          className="NewButton"
+          aria-label="Date Posted"
+          onClick={() => handleClick("created_at")}
+        >
+          <BiTime />
+        </button>
+        <button
+          className="NewButton"
+          aria-label="Comment Count"
+          onClick={() => handleClick("comment_count")}
+        >
+          <BiCommentAdd />
+        </button>
+        <button
+          className="NewButton"
+          aria-label="Votes Received"
+          onClick={() => handleClick("votes")}
+        >
+          <BiUpArrowCircle />
+        </button>
+  
+      </div>      
       <br></br>
       {topicParam.map((topic) => {
         return (
           <>
-            <Link to={`/articles/${topic.article_id}`} className="BigLink">
+            <Link
+              to={`/articles/${topic.article_id}`}
+              className="BigLink"
+              key={topic.article_id}
+            >
               <li className="LinkNews">
                 {" "}
                 <h2 className="articleTitles">{topic.title}</h2>
@@ -35,8 +81,13 @@ const ArticleByTopic = () => {
                 <p className="DatePosted">
                   {moment(topic.created_at).format("LL")}
                 </p>
-                <p>{topic.body.substring(0, 200)}</p>
-              </li>
+                <p>{topic.body.substring(0, 200)}</p>{" "}
+                <p className="DatePosted">
+                  <AiFillTag />{" "}
+                  {topic_id.charAt(0).toUpperCase() + topic_id.slice(1)}
+                </p>
+              </li>{" "}
+              <div className="CategoryDivider"></div>
             </Link>
             <div className="NewsDiv">
               <button className="Upvote">

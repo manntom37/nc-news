@@ -5,6 +5,8 @@ import { BsArrowLeftSquareFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import moment from "moment";
 import { AiFillTag } from "react-icons/ai";
+import { createBrowserHistory } from "history";
+let history = createBrowserHistory();
 
 const SingleArticle = () => {
   const { article_id } = useParams();
@@ -18,11 +20,13 @@ const SingleArticle = () => {
 
   return (
     <>
-      <Link to={"/"}>
-        <div className="backArrow">
-          <BsArrowLeftSquareFill className="backArrowIcon" />
-        </div>
-      </Link>
+      <div className="backArrow">
+        <BsArrowLeftSquareFill
+          className="backArrowIcon"
+          onClick={() => history.go(-1)}
+        />
+      </div>
+
       <div>
         <li key={article.article_id} className="LinkNewsSingle">
           <h1 className="SingleArticleHeader">{article.title}</h1>
@@ -37,6 +41,7 @@ const SingleArticle = () => {
             {article.topic}
           </p>
         </li>
+        <div className="CategoryDividerComments"></div>
       </div>
     </>
   );
