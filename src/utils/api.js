@@ -29,3 +29,9 @@ export const getTopics = () => {
     return res.data.topics;
   });
 };
+
+export const getArticleComments = (article_id) => {
+  return NewsAPI.get(`/articles/${article_id}/comments`).then((res) => {
+    return res.data.comments;
+  });
+};

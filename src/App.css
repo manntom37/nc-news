@@ -59,6 +59,12 @@ h2 {
   font-family: "Space Mono", monospace;
   text-align: center;
 }
+.authorOfComment {
+  margin: auto;
+  font-family: "Space Mono", monospace;
+  text-align: left;
+  padding-left: 10px;
+}
 
 .authorList {
   margin-top: 0;
@@ -230,6 +236,15 @@ ul {
   padding-bottom: 10px;
 }
 
+.DatePostedComment {
+  margin: 0;
+  font-size: 0.8em;
+  color: #39393a;
+  text-align: left;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+
 .CategoryList {
   padding-right: 10px;
   padding-left: 10px;
@@ -337,4 +352,26 @@ ul {
 .SortByTextOnTopics {
   text-align: left;
   padding-left: 10px;
+}
+.Comments {
+  text-align: left;
+  padding-left: 20px;
+  color: #39393a;
+  text-decoration: underline;
+}
+
+.CommentsUL {
+  display: flex;
+  flex-direction: column;
+}
+
+.CommentLI {
+  border: 1px solid black;
+border-radius: 25px;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.CommentBody {
+  margin-top: 0;
 }

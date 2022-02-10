@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import moment from "moment";
 import { AiFillTag } from "react-icons/ai";
 import { createBrowserHistory } from "history";
+import Comments from "./Comments";
 let history = createBrowserHistory();
 
 const SingleArticle = () => {
@@ -43,6 +44,7 @@ const SingleArticle = () => {
         </li>
         <div className="CategoryDividerComments"></div>
       </div>
+      <Comments></Comments>
     </>
   );
 };
