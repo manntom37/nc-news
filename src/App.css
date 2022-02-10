@@ -26,7 +26,9 @@ h2 {
   border-bottom: 1px solid black;
   box-shadow: 2px 2px 2px 2px #888888;
 }
-
+h2 {
+  color: #000;
+}
 .CommentDiv {
   font-family: "Space Mono", monospace;
   text-align: center;
@@ -42,7 +44,6 @@ h2 {
   border-radius: 20px;
 }
 .LinkNewsSingle {
-  /* border: 1px solid black; */
   padding: 10px;
   margin: auto;
 
@@ -158,8 +159,6 @@ ul {
   display: flex;
   min-width: 110%;
 }
-
-
 
 .CategoryDivider {
   width: 120vw;
@@ -318,7 +317,6 @@ ul {
   text-align: center;
   align-items: center;
   flex-wrap: wrap;
-  
 }
 
 .SortByText {
