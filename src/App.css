@@ -400,7 +400,7 @@ ul {
   height: 100px;
   width: 100px;
   border-radius: 50%;
-  border:2px solid #39393a;
+  border: 2px solid #39393a;
   margin-top: 10px;
 }
 
@@ -411,4 +411,38 @@ ul {
   margin: auto;
   margin-top: 20vh;
   background-color: #e6e6e6;
+}
+
+.AddComment {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.InputComment {
+  border: 1px solid black;
+  border-radius: 20px;
+  height: 10vh;
+  width: 60vw;
+  display: flex;
+}
+
+.AddCommentDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.AddCommentP {
+  text-align: left;
+  padding-left: 20px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.SubmitComment {
+  font-family: "Space Mono", monospace;
+
+  text-align: center;
+  display: flex;
+  margin-left: 20px;
 }

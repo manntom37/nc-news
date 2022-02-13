@@ -12,6 +12,7 @@ const UserLoggedIn = () => {
         ></img>
         <h2>loyle_capo_chrissy</h2>
       </div>
+      <p>(Test account for test purposes)</p>
     </>
   );
 };

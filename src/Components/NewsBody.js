@@ -16,7 +16,7 @@ const NewsBody = () => {
       setIsLoading(false);
       return setArticles(res);
     });
-  }, [setVotes]);
+  }, [articles]);
 
   if (isLoading) return <p className="Loading">Loading...</p>;
 
@@ -27,9 +27,8 @@ const NewsBody = () => {
   };
 
   const patchVotes = (article_id) => {
-    patchArticleVotes(article_id).then((res) => {
-      setVotes((currVote) => currVote + 1);
-    });
+    setVotes((currVote) => currVote + 1);
+    patchArticleVotes(article_id);
   };
 
   return (
@@ -86,7 +85,7 @@ const NewsBody = () => {
                   <BiUpArrowCircle
                     className="UpVoteButton"
                     onClick={() =>
-                      patchVotes(article.article_id, article.votes)
+                      patchVotes(article.article_id)
                     }
                   />
                 </button>

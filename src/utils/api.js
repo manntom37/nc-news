@@ -43,3 +43,13 @@ export const patchArticleVotes = (article_id) => {
     return res.data.article.votes;
   });
 };
+
+export const postComment = (article_id, comment) => {
+  return NewsAPI.post(`/articles/${article_id}/comments`, {
+    username: "loyle_capo_chrissy",
+    body: comment,
+  }).then((res) => {
+    console.log(res.data.comment);
+    return res.data.comment;
+  });
+};
