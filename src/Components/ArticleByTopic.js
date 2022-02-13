@@ -5,22 +5,25 @@ import { getArticles } from "../utils/api";
 import { BiCommentAdd } from "react-icons/bi";
 import { BiUpArrowCircle, BiTime } from "react-icons/bi";
 import moment from "moment";
-import { getTopics } from "../utils/api";
 import { AiFillTag } from "react-icons/ai";
 import { BsArrowLeftSquareFill } from "react-icons/bs";
 
 const ArticleByTopic = () => {
   const { topic_id } = useParams();
   const [topicParam, setTopicParam] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  let topicsAvailable = ["football", "coding", "cooking"];
 
   useEffect(() => {
     getArticles(topic_id).then((res) => {
       setTopicParam(res);
+      setIsLoading(false);
     });
   }, [topic_id]);
 
+  if (isLoading) return <p className="Loading">Loading...</p>;
+
   const handleClick = (sort_by) => {
-    console.log(sort_by);
     getArticles(topic_id, sort_by).then((res) => {
       return setTopicParam(res);
     });
@@ -30,7 +33,7 @@ const ArticleByTopic = () => {
     <ul className="NewsBody">
       <h2 className="TopicSlug">
         <div className="backArrowCat">
-          <Link to={`/topics/`}>
+          <Link to={`/topics/`} key={topic_id}>
             <BsArrowLeftSquareFill className="backArrowIconCat" />
           </Link>
 
@@ -63,8 +66,7 @@ const ArticleByTopic = () => {
         >
           <BiUpArrowCircle />
         </button>
-  
-      </div>      
+      </div>
       <br></br>
       {topicParam.map((topic) => {
         return (
@@ -74,7 +76,7 @@ const ArticleByTopic = () => {
               className="BigLink"
               key={topic.article_id}
             >
-              <li className="LinkNews">
+              <li className="LinkNews" key={topic.article_id}>
                 {" "}
                 <h2 className="articleTitles">{topic.title}</h2>
                 <p className="authorList">{topic.author}</p>{" "}

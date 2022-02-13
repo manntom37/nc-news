@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { getSingleArticle } from "../utils/api";
 import { useParams } from "react-router-dom";
 import { BsArrowLeftSquareFill } from "react-icons/bs";
-import { Link } from "react-router-dom";
 import moment from "moment";
 import { AiFillTag } from "react-icons/ai";
+import ErrorPage from "./ErrorPage";
 import { createBrowserHistory } from "history";
 import Comments from "./Comments";
 let history = createBrowserHistory();
@@ -12,12 +12,23 @@ let history = createBrowserHistory();
 const SingleArticle = () => {
   const { article_id } = useParams();
   const [article, setArticle] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    getSingleArticle(article_id).then((res) => {
-      setArticle(res);
-    });
+    getSingleArticle(article_id)
+      .then((res) => {
+        setArticle(res);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        setError({err});
+      });
   }, []);
+  if (error) {
+    return <ErrorPage></ErrorPage>;
+  }
+  if (isLoading) return <p className="Loading">Loading...</p>;
 
   return (
     <>

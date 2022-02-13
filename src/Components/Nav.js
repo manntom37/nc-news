@@ -12,7 +12,10 @@ const Nav = () => {
       <Link to={`/topics`}>
         <BiCategory className="CategoryIcon" />{" "}
       </Link>
-      <FaUserCircle className="UserIcon" />
+      <Link to={`/user`}>
+        {" "}
+        <FaUserCircle className="UserIcon" />
+      </Link>
     </nav>
   );
 };

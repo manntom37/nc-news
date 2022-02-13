@@ -7,6 +7,8 @@ import Home from "./Components/NewsBody";
 import SingleArticle from "./Components/SingleArticle";
 import Topics from "./Components/Topics";
 import ArticleByTopic from "./Components/ArticleByTopic";
+import UserLoggedIn from "./Components/UserLoggedIn";
+import ErrorPage from "./Components/ErrorPage";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
           <Route path="/articles/:article_id" element={<SingleArticle />} />
           <Route path="/topics" element={<Topics />} />
           <Route path="/topics/:topic_id" element={<ArticleByTopic />} />
+          <Route path="/user" element={<UserLoggedIn />} />
+          <Route path="*" element={<ErrorPage/>} />
         </Routes>
       </div>
     </BrowserRouter>

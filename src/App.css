@@ -11,7 +11,6 @@ h2 {
 }
 
 .Header {
-  min-width: 100vw;
   display: grid;
   justify-content: normal;
   grid-template-columns: 40vw auto;
@@ -61,9 +60,12 @@ h2 {
 }
 .authorOfComment {
   margin: auto;
+  display: flex;
   font-family: "Space Mono", monospace;
   text-align: left;
   padding-left: 10px;
+  align-items: center;
+  padding-top: 5px;
 }
 
 .authorList {
@@ -99,7 +101,7 @@ ul {
   padding-left: 0px;
   display: grid;
   grid-template-columns: 25% 25% 25%;
-  grid-template-areas: "a b b b b b b b c c c c c c c  c";
+  grid-template-areas: "a b c";
   justify-content: space-between;
   justify-items: start;
   align-items: baseline;
@@ -153,24 +155,24 @@ ul {
 .UpVoteButton {
   height: 30px;
   width: 30px;
-  /* position: relative; */
   padding-left: 0px;
   align-self: center;
   text-align: center;
   color: #000;
 }
 .divider {
-  width: 120vw;
+  width: 100vw;
   border: 1px solid #e6e6e6;
   display: flex;
-  min-width: 110%;
+  min-width: 100vw;
+  margin: auto;
 }
 
 .CategoryDivider {
-  width: 120vw;
+  width: 100vw;
   border: 1px solid #e6e6e6;
   display: flex;
-  min-width: 110%;
+  min-width: 100%;
 }
 
 .articleTitles {
@@ -197,7 +199,6 @@ ul {
 }
 
 .backArrow {
-  /* border: 1px solid black; */
   padding-left: 20px;
   padding-top: 10px;
   width: 30px;
@@ -214,6 +215,12 @@ ul {
   height: 20px;
   width: 20px;
   grid-area: c;
+  color: #000;
+}
+.UserIconComments {
+  height: 20px;
+  width: 20px;
+  padding-right: 5px;
 }
 
 .SingleArticleTag {
@@ -223,7 +230,6 @@ ul {
 }
 
 .DatePosted {
-  /* border: 1px solid black; */
   margin: 0;
   font-size: 0.8em;
   color: #39393a;
@@ -281,7 +287,6 @@ ul {
   margin-bottom: 0;
 }
 .backArrowCat {
-  /* border: 1px solid black; */
   display: flex;
   width: 75vw;
   margin: 0px;
@@ -305,14 +310,19 @@ ul {
   width: 50vw;
   justify-self: center;
   border: 2px solid #e6e6e6;
-  /* display: flex; */
-  /* min-width: 110%; */
-  /* margin-left: 50vw; */
   margin: auto;
 }
 
+.dividerNewsBod {
+  width: 100vw;
+  border: 1px solid #e6e6e6;
+  display: flex;
+  min-width: 100vw;
+  margin: auto;
+  margin-left: 65px;
+}
+
 .SortBy {
-  /* border: 1px solid black; */
   width: 100vw;
   height: 50px;
   margin-top: 5px;
@@ -363,15 +373,42 @@ ul {
 .CommentsUL {
   display: flex;
   flex-direction: column;
+  margin: auto;
 }
 
 .CommentLI {
-  border: 1px solid black;
-border-radius: 25px;
+  border: 1px solid #39393a;
+  border-radius: 25px;
   text-align: left;
   margin-bottom: 10px;
+  padding-left: 10px;
+  width: 70vw;
 }
 
 .CommentBody {
   margin-top: 0;
+}
+
+.Loading {
+  text-align: center;
+  margin: auto;
+  margin-top: 50%;
+}
+
+.LoggedInUser {
+  text-align: center;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border:2px solid #39393a;
+  margin-top: 10px;
+}
+
+.UserCard {
+  border: 1px solid #888888;
+  border-radius: 25px;
+  width: 70vw;
+  margin: auto;
+  margin-top: 20vh;
+  background-color: #e6e6e6;
 }

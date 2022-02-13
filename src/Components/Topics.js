@@ -4,11 +4,15 @@ import { getTopics } from "../utils/api";
 
 const Topics = () => {
   const [topic, setTopic] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     getTopics().then((res) => {
+      setIsLoading(false);
       return setTopic(res);
     });
   }, []);
+
+  if (isLoading) return <p className="Loading">Loading...</p>;
   return (
     <>
       <h1 className="CategoryH1">Looking for a certain topic?</h1>

@@ -35,3 +35,11 @@ export const getArticleComments = (article_id) => {
     return res.data.comments;
   });
 };
+
+export const patchArticleVotes = (article_id) => {
+  return NewsAPI.patch(`/articles/${article_id}`, {
+    inc_votes: 1,
+  }).then((res) => {
+    return res.data.article.votes;
+  });
+};
