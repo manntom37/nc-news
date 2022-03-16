@@ -10,6 +10,7 @@ const NewsBody = () => {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [votes, setVotes] = useState(0);
+ console.log(votes)
 
   useEffect(() => {
     getArticles().then((res) => {
@@ -72,7 +73,7 @@ const NewsBody = () => {
                   <h2 className="articleTitles" key={article.article_id}>
                     {article.title}
                   </h2>
-                  <p className="authorList">{article.author}</p>{" "}
+                  <p className="authorList">{article.author}</p>
                   <p className="DatePosted">
                     {moment(article.created_at).format("LL")}
                   </p>

@@ -28,8 +28,8 @@ const Comments = () => {
         <form onSubmit={handleSubmit}>
           <input
             className="InputComment"
-            className="AddComment"
-            className="SubmitComment"
+            // className="AddComment"
+            // className="SubmitComment"
           ></input>
           <button type="submit">Submit</button>
         </form>

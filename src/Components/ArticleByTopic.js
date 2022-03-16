@@ -12,7 +12,6 @@ const ArticleByTopic = () => {
   const { topic_id } = useParams();
   const [topicParam, setTopicParam] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  let topicsAvailable = ["football", "coding", "cooking"];
 
   useEffect(() => {
     getArticles(topic_id).then((res) => {
