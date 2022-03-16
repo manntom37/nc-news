@@ -1,6 +1,5 @@
 import "./App.css";
 import Header from "./Components/Header";
-import Nav from "./Components/Nav";
 import { React } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Components/NewsBody";

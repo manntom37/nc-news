@@ -9,6 +9,7 @@ const UserLoggedIn = () => {
         <img
           src="https://f4.bcbits.com/img/0020435433_20.jpg"
           className="LoggedInUser"
+          alt="user profile pic"
         ></img>
         <h2>loyle_capo_chrissy</h2>
       </div>
