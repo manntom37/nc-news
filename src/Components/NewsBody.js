@@ -17,7 +17,7 @@ const NewsBody = () => {
       setIsLoading(false);
       return setArticles(res);
     });
-  }, [articles]);
+  }, []);
 
   if (isLoading) return <p className="Loading">Loading...</p>;
 
