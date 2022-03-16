@@ -13,7 +13,7 @@ const Comments = () => {
     getArticleComments(article_id).then((res) => {
       setComments(res);
     });
-  }, [comments]);
+  }, [comments, article_id]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
