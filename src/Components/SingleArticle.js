@@ -22,9 +22,9 @@ const SingleArticle = () => {
         setIsLoading(false);
       })
       .catch((err) => {
-        setError({err});
+        setError({ err });
       });
-  }, []);
+  }, [article_id]);
   if (error) {
     return <ErrorPage></ErrorPage>;
   }
