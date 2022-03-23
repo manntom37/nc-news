@@ -25,13 +25,11 @@ const Comments = () => {
       <h2 className="Comments">Comments</h2>
       <div className="AddCommentDiv">
         <p className="AddCommentP">Something to say?</p>
-        <form onSubmit={handleSubmit}>
-          <input
-            className="InputComment"
-            // className="AddComment"
-            // className="SubmitComment"
-          ></input>
-          <button type="submit">Submit</button>
+        <form onSubmit={handleSubmit} className="commentForm">
+          <input className="InputComment"></input>
+          <button type="submit" className="commentButton">
+            Submit
+          </button>
         </form>
       </div>
       <ul className="CommentsUL">
