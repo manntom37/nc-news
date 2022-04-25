@@ -2,6 +2,8 @@
 
 Link to hosted front end: https://manntom.netlify.app/
 
+LINK TO BACKEND REPO: https://github.com/manntom37/b-end-nc-news
+
 Welcome to NC News! This app is the Front End project I completed during the Northcoders bootcamp using React and linking to my own API with Axios.
 
 Users can view articles, comment on the articles (as a test user) as well as upvote comments and articles. Users are able to filter news by topic, date, and most popular.
